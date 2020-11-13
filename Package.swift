@@ -16,7 +16,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/Moya/Moya.git", .upToNextMajor(from: "14.0.0")),
-        .package(url: "https://github.com/vlaggen/swift-network-models.git", from: "1.0.0"),
+        .package(url: "https://github.com/vlaggen/swift-network-models.git", from: "1.0.1"),
     ],
     targets: [
         .target(name: "VlaggenNetworking", dependencies: [
