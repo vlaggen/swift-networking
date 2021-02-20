@@ -6,5 +6,7 @@ import VlaggenNetworkModels
 public protocol ParameterAsyncNetworkable {
     
     /// List of parameters
-    func list(completion: @escaping (_ result: Result<[ParameterResponse], MoyaError>) -> Void)
+    /// - Parameter conditions: Conditions for the parameters to be returned
+    /// - Returns: Parameters that conform to the conditions
+    func list(conditions: [String: String], completion: @escaping (_ result: Result<[ParameterResponse], MoyaError>) -> Void)
 }

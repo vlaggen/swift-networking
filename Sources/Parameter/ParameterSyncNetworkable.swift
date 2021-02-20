@@ -6,5 +6,7 @@ import VlaggenNetworkModels
 public protocol ParameterSyncNetworkable {
 
     /// List of parameters
-    func list() -> Result<[ParameterResponse], MoyaError>
+    /// - Parameter conditions: Conditions for the parameters to be returned
+    /// - Returns: Parameters that conform to the conditions
+    func list(conditions: [String: String]) -> Result<[ParameterResponse], MoyaError>
 }

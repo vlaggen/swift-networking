@@ -14,7 +14,7 @@ public class ParameterSyncNetwork: ParameterSyncNetworkable {
         self.provider = provider
     }
 
-    public func list() -> Result<[ParameterResponse], MoyaError> {
-        return provider.request(.list, to: [ParameterResponse].self)
+    public func list(conditions: [String: String]) -> Result<[ParameterResponse], MoyaError> {
+        return provider.request(.list(conditions: conditions), to: [ParameterResponse].self)
     }
 }

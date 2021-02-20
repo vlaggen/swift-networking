@@ -14,7 +14,7 @@ public class ParameterAsyncNetwork: ParameterAsyncNetworkable {
         self.provider = provider
     }
 
-    public func list(completion: @escaping (Result<[ParameterResponse], MoyaError>) -> Void) {
-        provider.request(.list, to: [ParameterResponse].self, completion: completion)
+    public func list(conditions: [String : String], completion: @escaping (Result<[ParameterResponse], MoyaError>) -> Void) {
+        provider.request(.list(conditions: conditions), to: [ParameterResponse].self, completion: completion)
     }
 }

@@ -4,7 +4,7 @@ import Moya
 
 public enum ParameterService {
     /// List of all the parameters.
-    case list
+    case list(conditions: [String: String])
 }
 
 extension ParameterService: TargetType {
@@ -25,8 +25,8 @@ extension ParameterService: TargetType {
 
     public var task: Task {
         switch self {
-            case .list:
-                return .requestPlain
+            case .list(let conditions):
+                return .requestParameters(parameters: conditions, encoding: URLEncoding.queryString)
         }
     }
 
